@@ -180,19 +180,23 @@ def main():
 
     random.seed(args.device_id)  # A given device ID will always generate
                                  # the same random data
-
-    simulated_temp = 10 + random.random() * 20
-
+        
+    simulated_cal_burned = random.uniform(1000, 2500)
+    simulated_cal_consumed = random.uniform(1500, 3000)
+    simulated_sleep = random.uniform(5, 10)
+    simulated_water = random.uniform(24, 100)
+    simulated_steps = random.uniform(2000, 20000)
+    simulated_distance = random.uniform(0, 30)
+    simulated_heartrate = random.uniform(60, 120)
+    simulated_weight = 10 + random.random() * 20
     if random.random() > 0.5:
-        temperature_trend = +1     # temps will slowly rise
+        weight_trend = +1     # weight will slowly rise
     else:
-        temperature_trend = -1     # temps will slowly fall
-
+        weight_trend = -1     # weight will slowly fall
     # Publish num_messages mesages to the MQTT bridge once per second.
     for i in range(1, args.num_messages + 1):
-
-        simulated_temp = simulated_temp + temperature_trend * random.normalvariate(0.01,0.005)
-        payload = {"timestamp": int(time.time()), "device": args.device_id, "temperature": simulated_temp}
+        simulated_weight = simulated_weight + weight_trend * random.normalvariate(0.01,0.005)
+        payload = {"timestamp": int(time.time()), "device": args.device_id, "calories_burned": simulated_cal_burned, "calories_consumed": simulated_cal_consumed, "sleep_hours": simulated_sleep, "water_consumed": simulated_water, "steps": simulated_steps, "distance": simulated_distance, "heart_rate": simulated_heartrate, "weight": simulated_weight}
         print('Publishing message {} of {}: \'{}\''.format(
                 i, args.num_messages, payload))
         jsonpayload =  json.dumps(payload,indent=4)
