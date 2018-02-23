@@ -44,7 +44,7 @@ gcloud pubsub topics create fitbyte
 5. Table name: metrics
 6. "Edit as Text" under Schema, paste: 
 ```
-user_id:STRING,calories_burned:FLOAT,calories_consumed:FLOAT,sleep_hours:FLOAT,water_consumed:FLOAT,steps:FLOAT,distance:FLOAT,bmi:FLOAT,heart_rate:FLOAT,timestamp:TIMESTAMP,device:STRING
+user_id:STRING,calories_burned:FLOAT,calories_consumed:FLOAT,sleep_hours:FLOAT,water_consumed:FLOAT,steps:FLOAT,distance:FLOAT,bmi:FLOAT,heart_rate:FLOAT,weight:FLOAT,timestamp:TIMESTAMP,device:STRING
 ```
 
 ### Create Cloud Storage Bucket
