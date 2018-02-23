@@ -66,7 +66,7 @@ gcloud iot registries create iot-devices \
 3. Region: us-central1
 4. Cloud Dataflow template: PubSub to BigQuery
 5. Cloud Pub/Sub input topic: projects/iot-data-pipeline-1/topics/fitbyte
-6. BigQuery output table: iot-data-pipeline-1:fitbye.metrics
+6. BigQuery output table: iot-data-pipeline-1:fitbyte.metrics
 7. Temporary Location: gs://fitbyte/tmp/
 8. Max-workers: 2
 9. Machine-type: n1-standard-1
