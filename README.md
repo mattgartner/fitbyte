@@ -139,10 +139,17 @@ python cloudiot_mqtt_example_json.py \
 python cloudiot_mqtt_example_json.py \
     --project_id=$PROJECT_ID \
     --registry_id=$REGISTRY \
-    --device_id=apple-2 \
+    --device_id=fitbit-4 \
     --private_key_file=rsa_private.pem \
     --message_type=event \
     --algorithm=RS256
 ```
 
 ## Demo Walkthrough
+
+### Upload Cloud Storage csv
+1. Dataflow template name: storage-test
+2. Cloud Dataflow Template: GCS Text to Cloud PubSub
+3. Input Cloud Storage Files: gs://fitbyte/upload/*.csv
+4. Output Pub/Sub Topic: projects/iot-data-pipeline-1/topics/fitbyte
+5. Temporary Location: gs://fitbyte/tmp/
